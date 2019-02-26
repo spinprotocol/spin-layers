@@ -48,5 +48,6 @@ build/Release
 .*.sw*
 Session.vim
 
-# Jetbrains IDEs
+# IDEs
 .idea
+.vscode
