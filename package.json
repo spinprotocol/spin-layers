@@ -1,0 +1,11 @@
+{
+  "name": "spin-layers",
+  "version": "1.0.0",
+  "description": "SPIN Protocol Lambda Layers Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Peter Jeong",
+  "license": "MIT"
+}
