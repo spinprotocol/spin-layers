@@ -1,0 +1,12 @@
+# NOTE: update this with your service name
+service: LAYER_NAME
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: eu-west-1
+
+layers:
+  LAYER_NAME:
+    path: src
