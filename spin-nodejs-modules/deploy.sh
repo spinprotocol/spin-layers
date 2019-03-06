@@ -1,20 +1,20 @@
 #!/bin/bash
 
 echo 'ℹ️  Setting up ℹ️'
-rm -rf dist
+rm -rf dist & rm -rf node_modules
 yarn
-yarn webpack
+mkdir -p dist/nodejs && cp -r node_modules dist/nodejs/node8/node_modules
 echo '✅  Setting up complete ✅'
 
 echo 'ℹ️  Zipping files ℹ️'
 cd dist
-zip -r LAYER_NAME.zip LAYER_NAME
+zip -r nodejs.zip nodejs
 cd ..
 echo '✅  Files zipped ✅'
  
 echo 'ℹ️  Creating Serverless package ℹ️'
 sls package
-mv dist/LAYER_NAME.zip .serverless/LAYER_NAME.zip
+mv dist/nodejs.zip .serverless/nodejs.zip
 echo '✅  Serverless package created ✅'
 
 echo 'ℹ️  Cleaning up ℹ️'

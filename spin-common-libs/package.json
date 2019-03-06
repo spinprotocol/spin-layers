@@ -1,11 +1,13 @@
 {
-  "name": "spin-nodeModules",
-  "version": "1.0.0",
+  "name": "spin-common-libs",
+  "version": "1.1.0",
   "description": "A template for creating a layer with serverless on AWS with babel7",
   "scripts": {
-    "local": "./local.sh",
+    "nodejs": "rm -rf ./src/nodejs && mkdir -p ./src/nodejs/node8 && cp -r node_modules ./src/nodejs/node8",
     "deploy": "./deploy.sh",
-    "remove": "sls remove -v"
+    "lint": "eslint .",
+    "test": "yarn lint && yarn jest",
+    "watch": "sudo ./local.sh && sudo node watchman.js"
   },
   "author": "",
   "license": "MIT",
@@ -27,7 +29,7 @@
   "dependencies": {
     "aws-sdk": "^2.411.0",
     "axios": "^0.18.0",
-    "ffp-js": "^0.0.3",
+    "ffp-js": "^0.0.7",
     "request": "^2.88.0",
     "serverless-mysql": "^1.2.1",
     "uuid": "^3.3.2"

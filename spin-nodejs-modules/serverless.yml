@@ -13,13 +13,13 @@ provider:
   region: ap-northeast-2
 
 layers:
-  celebNodeModules:
+  nodejs:
     path: dist
 
 resources:
   Outputs:
-    CelebNodeModules:
+    Nodejs:
       Value:
-        Ref: CelebNodeModulesLambdaLayer
+        Ref: NodejsLambdaLayer
       Export:
-        Name: CelebNodeModulesLambdaLayer
+        Name: NodejsLambdaLayer
