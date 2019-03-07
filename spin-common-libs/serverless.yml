@@ -1,4 +1,4 @@
-service: spin-commonLibraries
+service: spin-common
 
 custom:
   # Our stage is based on what is passed in when running serverless
@@ -19,13 +19,20 @@ provider:
   region: ap-northeast-2
 
 layers:
-  commonLibraries:
-    path: dist
+  libs:
+    path: dist/commonLibs
+  nodejs:
+    path: dist/nodeDependencies
 
 resources:
   Outputs:
-    CommonLibraries:
+    Libs:
       Value:
-        Ref: CommonLibrariesLambdaLayer
+        Ref: LibsLambdaLayer
       Export:
-        Name: ${self:custom.stage}CommonLibrariesLambdaLayer
+        Name: ${self:custom.stage}LibsLambdaLayer
+    Nodejs:
+      Value:
+        Ref: NodejsLambdaLayer
+      Export:
+        Name: ${self:custom.stage}NodejsLambdaLayer

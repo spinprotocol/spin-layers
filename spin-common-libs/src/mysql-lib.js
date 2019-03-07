@@ -10,6 +10,6 @@ const mysql = require('serverless-mysql')({
 
 exports.query = async (queryStr) => {
     let results = await mysql.query(queryStr);
-    await mysql.end();
+    await mysql.quit();
     return results;
 };

@@ -4,11 +4,19 @@ module.exports = {
   target: 'node',
   // Generate sourcemaps for proper error messages
   devtool: 'source-map',
+  entry: {
+    'api-util-lib': ['./src/api-util-lib.js'],
+    'cognito-lib': ['./src/cognito-lib.js'],
+    'dynamodb-lib': ['./src/dynamodb-lib.js'],
+    'mysql-lib': ['./src/mysql-lib.js'],
+    'request-lib': ['./src/request-lib.js'],
+    'response-lib': ['./src/response-lib.js']
+  },
   output: {
     // libraryExport: 'default',
     libraryTarget: 'commonjs2',
-    path: path.resolve(__dirname, 'dist/LAYER_NAME'),
-    filename: 'index.js',
+    path: path.resolve(__dirname, 'dist/libs'),
+    filename: '[name].js',
   },
   mode: 'production',
   optimization: {

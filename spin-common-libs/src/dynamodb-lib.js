@@ -1,8 +1,10 @@
 const dynamoDbClient = require('serverless-dynamodb-client');
 
 exports.call = function (action, params) {
-    return dynamoDbClient.doc[action](params).promise();
+  const dynamoDb = dynamoDbClient.doc;
+  return dynamoDb[action](params).promise();
 }
+
 exports.scan = async function (tableName, select, where, key, attr) {
   if (select == "*") select = null;
   const params = {
