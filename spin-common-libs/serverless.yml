@@ -1,4 +1,3 @@
-# NOTE: update this with your service name
 service: spin-common
 
 custom:
@@ -21,9 +20,9 @@ provider:
 
 layers:
   libs:
-    path: src
+    path: dist/commonLibs
   nodejs:
-    path: dist
+    path: dist/nodeDependencies
 
 resources:
   Outputs:
@@ -31,9 +30,9 @@ resources:
       Value:
         Ref: LibsLambdaLayer
       Export:
-        Name: LibsLambdaLayer
+        Name: ${self:custom.stage}LibsLambdaLayer
     Nodejs:
       Value:
         Ref: NodejsLambdaLayer
       Export:
-        Name: NodejsLambdaLayer
+        Name: ${self:custom.stage}NodejsLambdaLayer

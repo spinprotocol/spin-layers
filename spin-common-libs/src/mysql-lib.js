@@ -1,15 +1,14 @@
-const wtDBInfo = require('../config/wtdb_info');
 const mysql = require('serverless-mysql')({
     config: {
-        host     : wtDBInfo.host,
-        database : wtDBInfo.database,
-        user     : wtDBInfo.user,
-        password : wtDBInfo.password
+        host     : process.env.wtDdHost,
+        database : process.env.wtDbDatabase,
+        user     : process.env.wtDbUser,
+        password : process.env.wtDbPassword
     }
 });
 
 exports.query = async (queryStr) => {
     let results = await mysql.query(queryStr);
-    await mysql.end();
+    await mysql.quit();
     return results;
 };

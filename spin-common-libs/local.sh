@@ -4,7 +4,6 @@ echo 'ℹ️  Setting up ℹ️'
 rm -rf dist && rm -rf node_modules
 yarn
 # yarn webpack
-# mkdir -p dist/libs && cp -r src/ dist/libs && cp -r node_modules dist/libs
 mkdir -p dist/libs && cp -r src/ dist/libs
 ## only local
 cp -r node_modules dist/libs
