@@ -1,4 +1,3 @@
-# NOTE: update this with your service name
 service: spin-commonLibraries
 
 custom:
@@ -6,12 +5,12 @@ custom:
   # commands. Or fallsback to what we have set in the provider section.
   stage: ${opt:stage, self:provider.stage}
 
-  webpack:
-    webpackConfig: ./webpack.config.js
-    includeModules:
-      forceExclude:
-        - ''
-    packager: 'yarn'
+  # webpack:
+  #   webpackConfig: ./webpack.config.js
+  #   includeModules:
+  #     forceExclude:
+  #       - ''
+  #   packager: 'yarn'
 
 provider:
   name: aws
@@ -21,7 +20,7 @@ provider:
 
 layers:
   commonLibraries:
-    path: src
+    path: dist
 
 resources:
   Outputs:
@@ -29,4 +28,4 @@ resources:
       Value:
         Ref: CommonLibrariesLambdaLayer
       Export:
-        Name: CommonLibrariesLambdaLayer
+        Name: ${self:custom.stage}CommonLibrariesLambdaLayer

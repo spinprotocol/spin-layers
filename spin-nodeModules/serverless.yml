@@ -1,5 +1,5 @@
 # NOTE: update this with your service name
-service: spin-nodejs
+service: spin-celeb-nodeModules
 
 custom:
   # Our stage is based on what is passed in when running serverless
@@ -22,4 +22,4 @@ resources:
       Value:
         Ref: CelebNodeModulesLambdaLayer
       Export:
-        Name: CelebNodeModulesLambdaLayer
+        Name: ${self:custom.stage}CelebNodeModulesLambdaLayer

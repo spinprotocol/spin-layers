@@ -1,20 +1,16 @@
 {
-  "name": "spin-commonLibraries",
-  "version": "1.1.0",
-  "description": "A template for creating a layer with serverless on AWS with babel7",
+  "name": "spin-common-libraries",
+  "version": "1.0.0",
+  "description": "Layer service for common libraries in SPIN Protocol Projects",
   "scripts": {
-    "nodejs": "rm -rf ./src/nodejs && mkdir -p ./src/nodejs/node8 && cp -r node_modules ./src/nodejs/node8",
     "deploy": "./deploy.sh",
+    "remove": "sls remove -v --stage $STAGE",
     "lint": "eslint .",
     "test": "yarn lint && yarn jest",
     "watch": "sudo ./local.sh && sudo node watchman.js"
   },
   "author": "",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/robcronin/serverless-layer-template"
-  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
@@ -42,6 +38,7 @@
     "aws-sdk": "^2.411.0",
     "ffp-js": "^0.0.7",
     "request": "^2.88.0",
+    "serverless-dynamodb-client": "0.0.2",
     "serverless-mysql": "^1.2.1",
     "source-map-support": "^0.5.9"
   }

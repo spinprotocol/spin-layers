@@ -3,7 +3,7 @@
 echo 'ℹ️  Setting up ℹ️'
 rm -rf dist & rm -rf node_modules
 yarn
-mkdir -p dist/nodejs && cp -r node_modules dist/nodejs/node8
+mkdir -p dist/nodejs/node8 && cp -r node_modules dist/nodejs/node8
 echo '✅  Setting up complete ✅'
 
 

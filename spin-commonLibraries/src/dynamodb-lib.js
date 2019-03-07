@@ -1,10 +1,8 @@
-const AWS = require('aws-sdk');
+const dynamoDbClient = require('serverless-dynamodb-client');
 
 exports.call = function (action, params) {
-    const dynamoDb = new AWS.DynamoDB.DocumentClient();
-    return dynamoDb[action](params).promise();
+    return dynamoDbClient.doc[action](params).promise();
 }
-
 exports.scan = async function (tableName, select, where, key, attr) {
   if (select == "*") select = null;
   const params = {

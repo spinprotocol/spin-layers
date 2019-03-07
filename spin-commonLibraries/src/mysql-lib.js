@@ -1,10 +1,10 @@
-const wtDBInfo = require('../config/wtdb_info');
+const wtDB = require('../wtdb-credentials');
 const mysql = require('serverless-mysql')({
     config: {
-        host     : wtDBInfo.host,
-        database : wtDBInfo.database,
-        user     : wtDBInfo.user,
-        password : wtDBInfo.password
+        host     : wtDB.host,
+        database : wtDB.database,
+        user     : wtDB.user,
+        password : wtDB.password
     }
 });
 
