@@ -1,6 +1,6 @@
 const mysql = require('serverless-mysql')({
     config: {
-        host     : process.env.wtDdHost,
+        host     : process.env.wtDbHost,
         database : process.env.wtDbDatabase,
         user     : process.env.wtDbUser,
         password : process.env.wtDbPassword
