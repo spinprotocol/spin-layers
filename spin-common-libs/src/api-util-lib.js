@@ -1,6 +1,6 @@
-const { match, log } = require('ffp-js');
+const { match, join, pipe, entriesL, mapL } = require('ffp-js');
 
-exports.convertEvent2inputData = function (event) {
+exports.convertEvent2inputData = (event) => {
     return match(event)
         .case(a => a.pathParameters != null)(a => a.pathParameters)
         .case(a => a.queryStringParameters != null)(a => a.queryStringParameters)
@@ -8,7 +8,7 @@ exports.convertEvent2inputData = function (event) {
         .else(_ => false);
 }
 
-exports.getAuthorization = function (event) {
+exports.getAuthorization = (event) => {
     try{
         let data = event.headers.Authorization;
         (!data) ? data = false : data;
@@ -17,3 +17,8 @@ exports.getAuthorization = function (event) {
         return false;
     }
 }
+
+exports.queryStr = pipe(
+    entriesL,
+    mapL(([k, v])=> `${k}=${v}`),
+    join('&'));
