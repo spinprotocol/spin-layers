@@ -1,11 +1,11 @@
 const AWS = require('aws-sdk');
+const dynamoDbClient = require('serverless-dynamodb-client');
 const { go } = require('ffp-js');
 
 exports.call = function (action, params) {
-    const dynamoDb = new AWS.DynamoDB.DocumentClient();
+    const dynamoDb = dynamoDbClient.doc;
     return dynamoDb[action](params).promise();
 }
-
 exports.scan = async function (tableName, select, where, key, attr) {
     if (select === '*') select = null;
     const params = {
