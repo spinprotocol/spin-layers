@@ -9,12 +9,14 @@
   },
   "author": "",
   "dependencies": {
-    "aws-sdk": "^2.411.0",
+    "aws-sdk": "^2.413.0",
     "axios": "^0.18.0",
-    "ffp-js": "^0.0.7",
+    "ffp-js": "^0.0.3",
     "request": "^2.88.0",
     "serverless-dynamodb-client": "0.0.2",
     "serverless-mysql": "^1.2.1",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "@babel/runtime": "7.2.0",
+    "source-map-support": "^0.5.9"
   }
 }
