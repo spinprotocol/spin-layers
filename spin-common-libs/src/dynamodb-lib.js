@@ -1,11 +1,13 @@
-const AWS = require('aws-sdk');
 const dynamoDbClient = require('serverless-dynamodb-client');
 const { go } = require('ffp-js');
 
+// In order to be able to test libraries on local,
+// we need to use `serverless-dynamodb-client` instead of `aws-sdk`
 exports.call = function (action, params) {
     const dynamoDb = dynamoDbClient.doc;
     return dynamoDb[action](params).promise();
-}
+};
+
 exports.scan = async function (tableName, select, where, key, attr) {
     if (select === '*') select = null;
     const params = {
@@ -21,7 +23,7 @@ exports.scan = async function (tableName, select, where, key, attr) {
     } catch (e) {
         return {status: false, err: e};
     }
-}
+};
 
 exports.getAllItems = params => go(
     params,
