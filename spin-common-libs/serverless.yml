@@ -20,8 +20,10 @@ provider:
 
 layers:
   libs:
+    name: ${self:custom.stage}-libs
     path: dist/commonLibs
   nodejs:
+    name: ${self:custom.stage}-nodejs
     path: dist/nodeDependencies
 
 resources:

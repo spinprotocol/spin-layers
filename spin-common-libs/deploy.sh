@@ -2,9 +2,9 @@
 
 echo 'ℹ️  Setting up ℹ️'
 rm -rf dist && rm -rf node_modules
-# export PARENT_DIR=../../
-# export DEPENDENCIES_DEST=./
-# node ../scripts/package-json-merger.js
+export PARENT_DIR=../../
+export DEPENDENCIES_DEST=./
+node ../scripts/package-json-merger.js
 npm install
 # yarn webpack
 ## spin-common-libs Layer
