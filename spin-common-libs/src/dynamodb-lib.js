@@ -51,3 +51,8 @@ exports.deleteItem = params => go(
     params,
     a => this.call("delete", a)
 );
+
+exports.getAllItemsForPaging = params => go(
+    params,
+    a => this.call('scan', a)
+);
