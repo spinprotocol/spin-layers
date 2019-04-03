@@ -8,22 +8,15 @@ exports.call = function (action, params) {
     return dynamoDb[action](params).promise();
 };
 
-exports.scan = async function (tableName, select, where, key, attr) {
-    if (select === '*') select = null;
-    const params = {
+exports.defaltParamsForPaging = (tableName, limit, lastKey) => {
+    const lastEvaluatedKey = !id ? "0" : id;
+    return {
         TableName: tableName,
-        ProjectionExpression: select,
-        FilterExpression: where,
-        ExpressionAttributeNames: key,
-        ExpressionAttributeValues: attr
-    };
-    try {
-        const result = await this.call('scan', params);
-        return {status: true, data: result};
-    } catch (e) {
-        return {status: false, err: e};
+        ExclusiveStartKey: lastKey,
+        Limit: limit,
+        ScanIndexForward: false
     }
-};
+}
 
 exports.getAllItems = params => go(
     params,
@@ -50,4 +43,9 @@ exports.updateItem = params => go(
 exports.deleteItem = params => go(
     params,
     a => this.call("delete", a)
+);
+
+exports.getAllItemsForPaging = params => go(
+    params,
+    a => this.call('scan', a)
 );
