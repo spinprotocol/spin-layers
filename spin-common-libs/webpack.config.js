@@ -9,7 +9,6 @@ module.exports = {
     'cognito-lib': ['./src/cognito-lib.js'],
     'dynamodb-lib': ['./src/dynamodb-lib.js'],
     'mysql-lib': ['./src/mysql-lib.js'],
-    'request-lib': ['./src/request-lib.js'],
     'response-lib': ['./src/response-lib.js']
   },
   output: {
