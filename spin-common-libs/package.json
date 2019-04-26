@@ -16,6 +16,8 @@
     "serverless-dynamodb-client": "0.0.2",
     "serverless-mysql": "^1.2.1",
     "uuid": "^3.3.2",
-    "@google-cloud/storage": "^1.7.0"
+    "@google-cloud/storage": "^1.7.0",
+    "atob": "^2.1.2",
+    "fast-crc32c": "^1.0.4"
   }
 }
