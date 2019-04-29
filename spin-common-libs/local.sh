@@ -4,7 +4,7 @@ echo 'ℹ️  Setting up ℹ️'
 rm -rf dist && rm -rf node_modules
 export PARENT_DIR=../../
 export DEPENDENCIES_DEST=./
-node ../scripts/package-json-merger.js
+# node ../scripts/package-json-merger.js
 npm install
 # yarn webpack
 mkdir -p dist/libs && cp -r src/ dist/libs && cp -r node_modules dist/libs
