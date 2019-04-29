@@ -14,4 +14,4 @@ const decryptSecureValue = key => {
 exports.getParamterStoreValue = name => getValue({
     Name: name,
     WithDecryption: false
-})
+}) 
