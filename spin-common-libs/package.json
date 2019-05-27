@@ -11,7 +11,7 @@
   "dependencies": {
     "aws-sdk": "^2.463.0",
     "axios": "^0.18.0",
-    "ffp-js": "^0.0.10",
+    "ffp-js": "^0.0.11",
     "mql2": "^0.1.20",
     "serverless-dynamodb-client": "0.0.2",
     "serverless-mysql": "^1.4.0"
