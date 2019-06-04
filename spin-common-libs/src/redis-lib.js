@@ -6,6 +6,7 @@ const client = redis.createClient(
 );
 
 const REDIS = {};
+REDIS.CLIENT = client;
 
 REDIS.get = k => new Promise((resolve, reject) => {
   client.get(k, (err, res) => {
@@ -13,8 +14,9 @@ REDIS.get = k => new Promise((resolve, reject) => {
   });
 });
 
-REDIS.set = (k, v) => new Promise((resolve, reject) => {
-  return (!client.set(k, v)) ? resolve({ key: k, value: v }) : reject('Data setting failed.');
-}); 
+REDIS.set = (k, v) => {
+  client.set(k, v);
+}
 
 exports.REDIS = REDIS;
+exports.REDIS.CLIENT = REDIS.CLIENT;
