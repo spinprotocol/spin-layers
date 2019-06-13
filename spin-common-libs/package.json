@@ -9,9 +9,9 @@
   },
   "author": "",
   "dependencies": {
-    "aws-sdk": "^2.467.0",
+    "aws-sdk": "^2.474.0",
     "axios": "^0.18.1",
-    "ffp-js": "^0.0.14",
+    "ffp-js": "^0.0.15",
     "mql2": "^0.1.20",
     "redis": "^2.8.0",
     "serverless-dynamodb-client": "0.0.2",
