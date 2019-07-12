@@ -18,6 +18,7 @@ exports.getAuthorization = (event) => {
     }
 }
 
+
 exports.queryStr = pipe(
     entriesL,
     mapL(([k, v])=> `${k}=${v}`),
