@@ -1,7 +1,6 @@
 const AWS = require('aws-sdk');
 const { go } = require('ffp-js')
 const ssm = new AWS.SSM({ region: 'ap-northeast-2' });
-const kms = new AWS.KMS({ region: 'ap-northeast-2' });
 
 const getValue = (keyObj, callback) => {
     return ssm.getParameter(keyObj).promise()

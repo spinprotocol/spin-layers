@@ -1,5 +1,3 @@
-const { getParamterStoreSecretValue } = require('/opt/libs/ssm-lib')
-
 const config = {
     host: process.env.wtDbHost,
     database: process.env.wtDbDatabase,
