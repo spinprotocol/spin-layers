@@ -8,7 +8,9 @@ const getValue = (keyObj, callback) => {
 }
 
 const takeParameterValue = parameterObj => {
-    return !parameterObj || parameterObj.Parameter.Value
+    return !parameterObj
+        ? 'Erorr Params'
+        : parameterObj.Parameter.Value
 }
 
 exports.getParamterStoreValue = name => getValue({
