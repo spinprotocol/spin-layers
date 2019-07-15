@@ -27,6 +27,11 @@ exports.preventUserAuth = (a, tokenInfo) => go(
         : failure({ status: false, message: "Unauthorized" })
 )
 
+exports.preventUserAuthBool = (event, tokenInfo) => go(
+    event,
+    a => a.email === tokenInfo.email || tokenInfo.auth !== 'influencer'
+)
+
 exports.queryStr = pipe(
     entriesL,
     mapL(([k, v])=> `${k}=${v}`),
