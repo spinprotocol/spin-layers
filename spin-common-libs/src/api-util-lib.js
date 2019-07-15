@@ -1,4 +1,5 @@
-const { match, join, pipe, entriesL, mapL } = require('ffp-js');
+const { match, join, pipe, entriesL, mapL, go, head } = require('ffp-js');
+const { success, failure } = require('/opt/libs/response-lib');
 
 exports.convertEvent2inputData = (event) => {
     return match(event)
@@ -18,6 +19,13 @@ exports.getAuthorization = (event) => {
     }
 }
 
+exports.preventUserAuth = (a, tokenInfo) => go(
+    a,
+    head,
+    a => a.email === tokenInfo.email || tokenInfo.auth !== 'influencer'
+        ? success([a])
+        : failure({ status: false, message: "Unauthorized" })
+)
 
 exports.queryStr = pipe(
     entriesL,
