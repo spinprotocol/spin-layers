@@ -19,17 +19,12 @@ exports.getAuthorization = (event) => {
     }
 }
 
-exports.preventUserAuth = (a, tokenInfo) => go(
-    a,
-    head,
-    a => a.email === tokenInfo.email || tokenInfo.auth !== 'influencer'
-        ? success([a])
-        : failure({ status: false, message: "Unauthorized" })
-)
-
-exports.preventUserAuthBool = (event, tokenInfo) => go(
+exports.isUserAuth = (event, tokenInfo) => go(
     event,
-    a => a.email === tokenInfo.email || tokenInfo.auth !== 'influencer'
+    a => typeof(a) === 'Array'
+        ? head(a)
+        : a,
+    b => b.email === tokenInfo.email || tokenInfo.auth !== 'influencer'
 )
 
 exports.queryStr = pipe(
