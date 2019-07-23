@@ -18,5 +18,6 @@ exports.USER_ROLE = {
   all: ['influencer', 'admin', 'supplier'],
   influencer: ['influencer'],
   admin: ['admin'],
-  supplier: ['supplier']
+  supplier: ['supplier'],
+  master: ['master']
 }
