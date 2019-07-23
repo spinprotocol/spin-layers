@@ -1,4 +1,4 @@
-const { match, join, pipe, entriesL, mapL } = require('ffp-js');
+Object.assign(global, require('ffp-js'));
 
 exports.convertEvent2inputData = (event) => {
     return match(event)
@@ -17,7 +17,6 @@ exports.getAuthorization = (event) => {
         return false;
     }
 }
-
 
 exports.queryStr = pipe(
     entriesL,
