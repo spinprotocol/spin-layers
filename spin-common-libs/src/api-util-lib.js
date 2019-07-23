@@ -1,4 +1,4 @@
-const { match, join, pipe, entriesL, mapL, go, head } = require('ffp-js');
+Object.assign(global, require('ffp-js'));
 
 exports.convertEvent2inputData = (event) => {
     return match(event)
