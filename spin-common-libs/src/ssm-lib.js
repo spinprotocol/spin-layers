@@ -1,35 +1,39 @@
 const AWS = require('aws-sdk');
 const { go } = require('ffp-js')
-const ssm = new AWS.SSM({ region: 'ap-northeast-2' });
+const aws_ssm = new AWS.SSM({ region: 'ap-northeast-2' });
+
+const SSM = {};
 
 const getValue = (keyObj, callback) => {
-    return ssm.getParameter(keyObj).promise()
-}
+    return aws_ssm.getParameter(keyObj).promise()
+};
 
 const takeParameterValue = parameterObj => {
     return !parameterObj
         ? 'Erorr Params'
         : parameterObj.Parameter.Value
-}
+};
 
-exports.getParamterStoreValue = name => getValue({
+SSM.getParamterStoreValue = name => getValue({
     Name: name,
     WithDecryption: false
-})
+});
 
-exports.getParamterStoreSecretValue = name => getValue({
+SSM.getParamterStoreSecretValue = name => getValue({
     Name: name,
     WithDecryption: true
-})
+});
 
-exports.getParameter = path => go(
+SSM.getParameter = path => go(
     path,
-    this.getParamterStoreValue,
+    SSM.getParamterStoreValue,
     takeParameterValue
-)
+);
 
-exports.getSecretParameter = path => go(
+SSM.getSecretParameter = path => go(
     path,
-    this.getParamterStoreSecretValue,
+    SSM.getParamterStoreSecretValue,
     takeParameterValue
-)
+);
+
+exports.SSM = SSM
