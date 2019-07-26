@@ -4,13 +4,8 @@ const aws_ssm = new AWS.SSM({ region: 'ap-northeast-2' });
 
 const SSM = {};
 
-const getValue = keyObj => {
-    return aws_ssm.getParameter(keyObj).promise()
-};
-
-const getValuesByPath = keyObj => {
-    return aws_ssm.getParametersByPath(keyObj).promise()
-}
+const getValue = keyObj => aws_ssm.getParameter(keyObj).promise();
+const getValuesByPath = keyObj => aws_ssm.getParametersByPath(keyObj).promise();
 
 const takeParameterValue = parameterObj => {
     return !parameterObj
