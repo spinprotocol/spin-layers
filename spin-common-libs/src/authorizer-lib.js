@@ -17,11 +17,11 @@ AUTH.isAuthorized = (tokenInfo, ...accessAuthList) => go(
 );
 
 AUTH.USER_ROLE = {
-  all: ['influencer', 'admin', 'supplier', 'master', 'womanstalk'],
-  influencer: ['influencer'],
-  admin: ['admin'],
-  supplier: ['supplier'],
-  master: ['master'],
-  womanstalk: ['womanstalk']
+  all: ['influencer', 'admin', 'supplier', 'master', 'womanstalk', 'test'],
+  influencer: ['influencer', 'test'],
+  admin: ['admin', 'test'],
+  supplier: ['supplier', 'test'],
+  master: ['master', 'test'],
+  womanstalk: ['womanstalk', 'test']
 };
 exports.AUTH = AUTH
