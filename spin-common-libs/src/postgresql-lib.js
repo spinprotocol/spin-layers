@@ -23,20 +23,4 @@ const UTILS = {};
  */
 UTILS.getArrayToStringForQuery = array => `["${array.join('","')}"]`;
 
-/**
- * @name getPathInAppliedInfluencers
- * @param { Number, String, Sql }
- */
-UTILS.getPathInAppliedInfluencers = (campaign_id, email, selectSql) => POOL.SQL`
-  SELECT
-    ${selectSql}
-  FROM
-    campaign,
-    jsonb_array_elements(applied_influencers) 
-    WITH ORDINALITY AS arr(applied_influencer, index)
-  WHERE
-    id = ${campaign_id} AND 
-    applied_influencer->>'email' = ${email}::TEXT
-`;
-
 exports.UTILS = UTILS
