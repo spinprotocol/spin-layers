@@ -9,8 +9,8 @@ const accessOriginList =
       'https://staging.spin-protocol.com',
       'https://spinprotocol.com',
       'http://dalpumae20181.godomall.com',
-      'http://dev.www.womanstalk.co.kr',
-      'https://www.womanstalk.co.kr'
+      'https://womanstalk.co.kr',
+      'http://womanstalk.co.kr'
   ];
 
 const accessHostList =
@@ -26,9 +26,7 @@ const accessHostList =
       'api.dev.spin-protocol.com',
       'api.staging.spin-protocol.com',
       'api.spinprotocol.com',
-      'hq6tste8th.execute-api.ap-northeast-2.amazonaws.com/dev',
-      'hq6tste8th.execute-api.ap-northeast-2.amazonaws.com/staging',
-      'hq6tste8th.execute-api.ap-northeast-2.amazonaws.com/prod',
+      'api.womanstalk.co.kr'
   ]
 
 function buildResponse(statusCode, body, headers) {
