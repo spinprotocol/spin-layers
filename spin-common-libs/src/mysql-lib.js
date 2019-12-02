@@ -7,7 +7,7 @@ const config = {
 
 const mysql = require('serverless-mysql')({ config });
 
-const { MySQL } = require('mql2');
+const { MySQL } = require('fxsql');
 const { CONNECT } = MySQL;
 
 const POOL = CONNECT(config);
