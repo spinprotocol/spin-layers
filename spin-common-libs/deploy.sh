@@ -10,7 +10,7 @@ npm install
 ## spin-common-libs Layer
 mkdir -p dist/commonLibs/libs && cp -r src/ dist/commonLibs/libs && cp -r node_modules dist/commonLibs/libs
 ## spin node_modules Layer
-mkdir -p dist/nodeDependencies/nodejs/node8 && cp -r node_modules dist/nodeDependencies/nodejs/node8
+mkdir -p dist/nodeDependencies/nodejs/node10 && cp -r node_modules dist/nodeDependencies/nodejs/node10
 echo '✅  Setting up complete ✅'
 
 echo 'ℹ️  Deploying ℹ️'
