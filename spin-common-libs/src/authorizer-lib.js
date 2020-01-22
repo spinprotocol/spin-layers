@@ -33,10 +33,10 @@ AUTH.isAuthorized = (event, ...accessAuthList) => go(
 );
 
 AUTH.USER_ROLE = {
-  all: ['influencer', 'admin', 'supplier', 'master', 'womanstalk', 'test'],
+  all: ['influencer', 'admin', 'business', 'master', 'womanstalk', 'test'],
   influencer: ['influencer', 'test'],
   admin: ['admin', 'test'],
-  supplier: ['supplier', 'test'],
+  business: ['business', 'test'],
   master: ['master', 'test'],
   womanstalk: ['womanstalk', 'test']
 };
