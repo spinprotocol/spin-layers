@@ -10,7 +10,7 @@
   "author": "",
   "dependencies": {
     "aws-sdk": "^2.474.0",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "ffp-js": "^0.0.21",
     "fxsql": "^1.2.0",
     "serverless-dynamodb-client": "0.0.2",
