@@ -9,7 +9,7 @@
   },
   "author": "",
   "dependencies": {
-    "aws-sdk": "^2.474.0",
+    "aws-sdk": "^2.814.0",
     "axios": "^0.18.1",
     "ffp-js": "^0.0.21",
     "fxsql": "^1.2.0",
